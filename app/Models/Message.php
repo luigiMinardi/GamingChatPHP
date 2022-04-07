@@ -16,8 +16,8 @@ class Message extends Model
      */
     protected $fillable = [
         'user_id',
+        'party_id',
         'message',
-        'date',
     ];
 
     /**
@@ -27,20 +27,16 @@ class Message extends Model
      */
     protected $hidden = [
         'user_id',
-    ];
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-
-    protected $casts = [
-        'date' => 'date',
+        'party_id',
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function party()
+    {
+        return $this->belongsTo(Party::class);
     }
 }
