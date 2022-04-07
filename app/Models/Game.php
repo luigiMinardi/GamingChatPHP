@@ -20,17 +20,6 @@ class Game extends Model
         'thumbnail_url',
         'description',
         'url',
-        'date',
-    ];
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-
-    protected $casts = [
-        'date' => 'date',
     ];
 
     public function parties()
