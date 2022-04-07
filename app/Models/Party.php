@@ -18,7 +18,6 @@ class Party extends Model
     protected $fillable = [
         'name',
         'description',
-        'date',
         'user_id',
         'game_id',
     ];
@@ -31,16 +30,6 @@ class Party extends Model
 
     protected $hidden = [
         'user_id',
-    ];
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-
-    protected $casts = [
-        'date' => 'date',
     ];
 
     // user that created the party
