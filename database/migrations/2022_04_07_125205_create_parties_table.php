@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class MemberMigration extends Migration
+class CreatePartiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,16 @@ class MemberMigration extends Migration
      */
     public function up()
     {
-        Schema::create('members', function (Blueprint $table) {
+        Schema::create('parties', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('description');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('party_id');
+            $table->unsignedBigInteger('game_id');
             $table->timestamps();
             
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('party_id')->references('id')->on('parties');
+            $table->foreign('game_id')->references('id')->on('games');
         });
     }
 
@@ -31,6 +33,6 @@ class MemberMigration extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('members');
+        Schema::dropIfExists('parties');
     }
 }
