@@ -44,6 +44,12 @@ class Party extends Model
         return $this->hasMany(Member::class, 'party_id');
     }
 
+    // messages sent to the party
+    public function messages()
+    {
+        return $this->hasMany(Message::class, 'party_id');
+    }
+
     // belongs to game model
     public function game()
     {
