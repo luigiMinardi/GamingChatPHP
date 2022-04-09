@@ -3,18 +3,18 @@
 API REST
 
 ## APP FEATURES
-- [ ] User can register with mail and password
+- [x] User can register with mail and password
 - [ ] User has auth with login
 - [ ] User can create parties (groups) of a Game
 - [ ] User can Search parties from a Game
 - [ ] User can join and exit a partie
 - [ ] User can send messages in a partie, the creator can edit and delete his own messages.
 - [ ] Messages from a partie is shown as a chat
-- [ ] Users can add and change his profile data, for example add its Steam user
+- [x] Users can add and change his profile data.
 - [ ] Users can log-out
 
 ## APP NEEDS
-- [ ] User Register
+- [x] User Register
 - [ ] User Login + token + middleware
 - [ ] Models CRUD
 - [ ] Good README
