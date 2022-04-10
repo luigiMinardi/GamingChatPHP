@@ -31,7 +31,6 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->nickname = $request->nickname;
         $user->password = $request->password;
-        // dd($user);
         $user->save();
         return response()->json($user);
     }
