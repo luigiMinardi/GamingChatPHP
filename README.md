@@ -3,7 +3,7 @@
 API REST
 
 ## APP FEATURES
-- [ ] User has auth with login
+- [x] User has auth with login
 - [ ] Users can log-out
 - [x] Messages from a partie is shown as a chat
 - [x] User can send messages in a partie, 
@@ -16,7 +16,7 @@ API REST
 - [x] Users can add and change his profile data.
 
 ## APP NEEDS
-- [ ] User Login + token + middleware
+- [x] User Login + token + middleware
 - [ ] Good README
 - [x] User Register
 - [x] Models CRUD

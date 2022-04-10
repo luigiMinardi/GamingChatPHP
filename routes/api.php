@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/users/login', [UserController::class, 'login']);
 Route::apiResource('users', UserController::class);
 
 Route::apiResource('games', GameController::class);
