@@ -5,7 +5,7 @@ API REST
 ## APP FEATURES
 - [ ] User has auth with login
 - [ ] Users can log-out
-- [ ] Messages from a partie is shown as a chat
+- [x] Messages from a partie is shown as a chat
 - [x] User can send messages in a partie, 
   - [ ] the creator can edit and delete his own messages.
     - [ ] (Needing validation just for the creator)

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Message;
+use Illuminate\Support\Facades\DB;
 
 class MessageController extends Controller
 {
@@ -72,5 +73,24 @@ class MessageController extends Controller
         $message = Message::find($id);
         $message->delete();
         return response()->json($message);
+    }
+
+    /**
+     * Display the resources that are in the specified party_id.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function getByParty($id)
+    {
+        // $messages = Message::where('party_id', $id)->get();
+
+        $messages = DB::table('messages')
+            ->join('users', 'messages.user_id', '=', 'users.id')
+            ->select('messages.id', 'messages.message', 'messages.updated_at', 'users.name as user_name')
+            ->where('messages.party_id', $id)
+            ->get();
+        
+        return response()->json($messages);
     }
 }

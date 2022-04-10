@@ -27,6 +27,7 @@ Route::apiResource('games', GameController::class);
 Route::get('/games/{game}/parties', [PartyController::class, 'getByGame']);
 Route::apiResource('parties', PartyController::class);
 
+Route::get('/parties/{party}/messages', [MessageController::class, 'getByParty']);
 Route::apiResource('messages', MessageController::class);
 
 Route::apiResource('members', MemberController::class)->except(['update']);
