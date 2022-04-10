@@ -4,7 +4,7 @@ API REST
 
 ## APP FEATURES
 - [x] User has auth with login
-- [ ] Users can log-out
+- [x] Users can log-out
 - [x] Messages from a partie is shown as a chat
 - [x] User can send messages in a partie, 
   - [ ] the creator can edit and delete his own messages.
@@ -24,14 +24,14 @@ API REST
 - [ ] Deploy at Heroku
 
 ## PROJECT PLUS
-- [ ] Good variable naming
+- [x] Good variable naming
 - [ ] Services to dont have large controllers
-- [ ] Good Practices
-- [ ] Eloquent and Laravel Colections
+- [x] Good Practices
+- [x] Eloquent and Laravel Colections
 
-# EXTRAS
-- [ ] Dockerize
-- [ ] Role Middleware
+<!-- # EXTRAS -->
+<!-- - [ ] Dockerize -->
+<!-- - [ ] Role Middleware -->
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>

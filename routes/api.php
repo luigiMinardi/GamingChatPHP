@@ -19,15 +19,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group(['middleware' => 'jwt.auth'], function () {
+    Route::post('/users/logout', [UserController::class, 'logout']);
+
+    Route::get('/games/{game}/parties', [PartyController::class, 'getByGame']);
+
+    Route::get('/parties/{party}/messages', [MessageController::class, 'getByParty']);
+});
 Route::post('/users/login', [UserController::class, 'login']);
 Route::apiResource('users', UserController::class);
 
 Route::apiResource('games', GameController::class);
 
-Route::get('/games/{game}/parties', [PartyController::class, 'getByGame']);
 Route::apiResource('parties', PartyController::class);
 
-Route::get('/parties/{party}/messages', [MessageController::class, 'getByParty']);
 Route::apiResource('messages', MessageController::class);
 
 Route::apiResource('members', MemberController::class)->except(['update']);
