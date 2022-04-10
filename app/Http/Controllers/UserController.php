@@ -30,7 +30,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->nickname = $request->nickname;
-        $user->password = $request->password;
+        $user->password = bcrypt($request->password);
         $user->save();
         return response()->json($user);
     }
@@ -60,7 +60,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->nickname = $request->nickname;
-        $user->password = $request->password;
+        $user->password = bcrypt($request->password);
         $user->save();
         return response()->json($user);
     }
