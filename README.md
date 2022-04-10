@@ -8,7 +8,9 @@ API REST
 - [x] User can create parties (groups) of a Game
 - [ ] User can Search parties from a Game
 - [ ] User can join and exit a partie
-- [ ] User can send messages in a partie, the creator can edit and delete his own messages.
+- [x] User can send messages in a partie, 
+  - [ ] the creator can edit and delete his own messages.
+    - [ ] (Needing validation just for the creator)
 - [ ] Messages from a partie is shown as a chat
 - [x] Users can add and change his profile data.
 - [ ] Users can log-out
