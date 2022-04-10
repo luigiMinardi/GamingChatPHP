@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('users', UserController::class);
-Route::resource('games', GameController::class);
-Route::resource('parties', PartyController::class);
-Route::resource('messages', MessageController::class);
+Route::apiResource('users', UserController::class);
+Route::apiResource('games', GameController::class);
+Route::apiResource('parties', PartyController::class);
+Route::apiResource('messages', MessageController::class);
