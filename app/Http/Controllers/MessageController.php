@@ -28,7 +28,7 @@ class MessageController extends Controller
     public function store(Request $request)
     {
         $message = new Message;
-        $message->user_id = $request->user_id;
+        $message->user_id = auth()->user()->id;
         $message->party_id = $request->party_id;
         $message->message = $request->message;
         $message->save();
@@ -56,7 +56,8 @@ class MessageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $message = Message::find($id);
+        $userId = auth()->user()->id;
+        $message = Message::where('user_id', $userId)->findOrFail($id);
         $message->message = $request->message;
         $message->save();
         return response()->json($message);
@@ -70,7 +71,8 @@ class MessageController extends Controller
      */
     public function destroy($id)
     {
-        $message = Message::find($id);
+        $userId = auth()->user()->id;
+        $message = Message::where('user_id', $userId)->findOrFail($id);
         $message->delete();
         return response()->json($message);
     }
@@ -83,14 +85,12 @@ class MessageController extends Controller
      */
     public function getByParty($id)
     {
-        // $messages = Message::where('party_id', $id)->get();
-
         $messages = DB::table('messages')
             ->join('users', 'messages.user_id', '=', 'users.id')
             ->select('messages.id', 'messages.message', 'messages.updated_at', 'users.name as user_name')
             ->where('messages.party_id', $id)
             ->get();
-        
+
         return response()->json($messages);
     }
 }

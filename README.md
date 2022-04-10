@@ -7,8 +7,8 @@ API REST
 - [x] Users can log-out
 - [x] Messages from a partie is shown as a chat
 - [x] User can send messages in a partie, 
-  - [ ] the creator can edit and delete his own messages.
-    - [ ] (Needing validation just for the creator)
+  - [x] the creator can edit and delete his own messages.
+    - [x] (Needing validation just for the creator)
 - [x] User can Search parties from a Game
 - [x] User can register with mail and password
 - [x] User can create parties (groups) of a Game
@@ -24,8 +24,8 @@ API REST
 - [ ] Deploy at Heroku
 
 ## PROJECT PLUS
+<!-- - [ ] Services to dont have large controllers -->
 - [x] Good variable naming
-- [ ] Services to dont have large controllers
 - [x] Good Practices
 - [x] Eloquent and Laravel Colections
 

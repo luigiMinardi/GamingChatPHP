@@ -26,6 +26,7 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 
     Route::get('/parties/{party}/messages', [MessageController::class, 'getByParty']);
 });
+
 Route::post('/users/login', [UserController::class, 'login']);
 Route::apiResource('users', UserController::class);
 
