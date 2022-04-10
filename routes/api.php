@@ -21,7 +21,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::apiResource('users', UserController::class);
+
 Route::apiResource('games', GameController::class);
+
+Route::get('/games/{game}/parties', [PartyController::class, 'getByGame']);
 Route::apiResource('parties', PartyController::class);
+
 Route::apiResource('messages', MessageController::class);
+
 Route::apiResource('members', MemberController::class)->except(['update']);

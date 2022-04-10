@@ -5,11 +5,11 @@ API REST
 ## APP FEATURES
 - [ ] User has auth with login
 - [ ] Users can log-out
-- [ ] User can Search parties from a Game
 - [ ] Messages from a partie is shown as a chat
 - [x] User can send messages in a partie, 
   - [ ] the creator can edit and delete his own messages.
     - [ ] (Needing validation just for the creator)
+- [x] User can Search parties from a Game
 - [x] User can register with mail and password
 - [x] User can create parties (groups) of a Game
 - [x] User can join and exit a partie

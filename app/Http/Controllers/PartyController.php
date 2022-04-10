@@ -76,4 +76,16 @@ class PartyController extends Controller
         $party->delete();
         return response()->json($party);
     }
+
+    /**
+     * Get all parties for a game
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function getByGame($id)
+    {
+        $parties = Party::where('game_id', $id)->get();
+        return response()->json($parties);
+    }
 }
