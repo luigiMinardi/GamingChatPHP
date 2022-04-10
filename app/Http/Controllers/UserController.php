@@ -80,6 +80,12 @@ class UserController extends Controller
         return response()->json($user);
     }
 
+    /**
+     * Login the specified resource.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function login(Request $request)
     {
         $user = User::where('email', $request->email)->first();
@@ -95,7 +101,12 @@ class UserController extends Controller
         }
     }
 
-    // logout
+    /**
+     * Logout the specified resource.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function logout(Request $request)
     {
         
