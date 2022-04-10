@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PartyController;
+use App\Http\Controllers\MemberController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,4 @@ Route::apiResource('users', UserController::class);
 Route::apiResource('games', GameController::class);
 Route::apiResource('parties', PartyController::class);
 Route::apiResource('messages', MessageController::class);
+Route::apiResource('members', MemberController::class)->except(['update']);

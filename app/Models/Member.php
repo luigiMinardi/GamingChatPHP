@@ -19,17 +19,6 @@ class Member extends Model
     ];
 
     /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-
-    protected $hidden = [
-        'user_id',
-        'party_id',
-    ];
-
-    /**
      * The attributes that should be cast.
      *
      * @var array<string, string>

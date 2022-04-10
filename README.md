@@ -3,23 +3,23 @@
 API REST
 
 ## APP FEATURES
-- [x] User can register with mail and password
 - [ ] User has auth with login
-- [x] User can create parties (groups) of a Game
+- [ ] Users can log-out
 - [ ] User can Search parties from a Game
-- [ ] User can join and exit a partie
+- [ ] Messages from a partie is shown as a chat
 - [x] User can send messages in a partie, 
   - [ ] the creator can edit and delete his own messages.
     - [ ] (Needing validation just for the creator)
-- [ ] Messages from a partie is shown as a chat
+- [x] User can register with mail and password
+- [x] User can create parties (groups) of a Game
+- [x] User can join and exit a partie
 - [x] Users can add and change his profile data.
-- [ ] Users can log-out
 
 ## APP NEEDS
-- [x] User Register
 - [ ] User Login + token + middleware
-- [ ] Models CRUD
 - [ ] Good README
+- [x] User Register
+- [x] Models CRUD
 
 - [ ] Deploy at Heroku
 
