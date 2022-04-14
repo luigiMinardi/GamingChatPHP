@@ -1,62 +1,93 @@
-# TODO
+# Gaming Chat with PHP
 
-API REST
+<div align="center">
 
-## APP FEATURES
-- [x] User has auth with login
-- [x] Users can log-out
-- [x] Messages from a partie is shown as a chat
-- [x] User can send messages in a partie, 
-  - [x] the creator can edit and delete his own messages.
-    - [x] (Needing validation just for the creator)
-- [x] User can Search parties from a Game
-- [x] User can register with mail and password
-- [x] User can create parties (groups) of a Game
-- [x] User can join and exit a partie
-- [x] Users can add and change his profile data.
+![License](https://img.shields.io/github/license/luigiMinardi/movieClubBackend?style=for-the-badge)
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Mysql](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+![JsonWebToken](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white)
+![Composer](https://img.shields.io/badge/Composer-885630?style=for-the-badge&logo=Composer&logoColor=white)
+</div>
 
-## APP NEEDS
-- [x] User Login + token + middleware
-- [ ] Good README
-- [x] User Register
-- [x] Models CRUD
+This is a REST API of a gaming LFG platform, using mysql as data base. Having tables for `games`, `members` and `messages`, `parties`, `users`.
 
-- [ ] Deploy at Heroku
+<div align="center">
 
-## PROJECT PLUS
-<!-- - [ ] Services to dont have large controllers -->
-- [x] Good variable naming
-- [x] Good Practices
-- [x] Eloquent and Laravel Colections
+[![Documentation](https://img.shields.io/badge/go%20to-documentation-informational?style=for-the-badge)](https://github.com/luigiMinardi/GamingChatPHP/wiki)
+</div>
 
-<!-- # EXTRAS -->
-<!-- - [ ] Dockerize -->
-<!-- - [ ] Role Middleware -->
+## Installing
 
+* First clone the repository:
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+    ```bash
+    git clone https://github.com/luigiMinardi/GamingChatPHP
+    ```
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+    Enter in the cloned repo `cd GamingChatPHP` or open in your IDE, for example `code GamingChatPHP` if you're using VSC.
 
-## About Laravel
+* Install all the dependencies:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+    ```bash
+    composer install
+    ```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* Create the data base:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+    <u>**You need to have mysql installed and running on your computer for this to work**</u>. You need to create the db directly on mysql (or your GUI manager for SQL dbs).
 
-## Learning Laravel
+* Make the migrations:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+    ```bash
+    php artisan migrate
+    ```
+
+* Run the server:
+
+    ```bash
+    php artisan serve
+    ```
+
+### Configuring .env
+In your root repository duplicate the `.env.example` file and rename it to be just `.env`, there you need to eddit these variables with your data:
+```m
+APP_KEY=
+
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Run `php artisan jwt:secret` to create the `JWT_SECRET` variable at your `.env`.
+
+Now you are ready to use it.
+
+# Using the API
+
+## Data Base ER Diagram
+
+![ER Draw](./.github/assets/img/laravelBackend.png)
+
+### Expected Behaviour
+
+`created_at`, `update_at`, `id`, are obligatory and auto-generated.
+
+the `id` is the **Primary Key** of the tables.
+
+USER `email` is unique.
+
+GAME `title` is unique.
+
+`user_id`, `game_id` and `party_id` are the USER, GAME and the PARTY **Foreign Key** respectively.
+
+You may see references for the **Primary Key** as `pk` and for the **foreign key** as `fk`.
+
+## Endpoints
+
+To see the endpoints and how they works, check our [documentation](https://github.com/luigiMinardi/GamingChatPHP/wiki).
+
+<div align="center">
+
+[![Documentation](https://img.shields.io/badge/go%20to-documentation-informational?style=for-the-badge)](https://github.com/luigiMinardi/GamingChatPHP/wiki)
+</div>
